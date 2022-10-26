@@ -38,6 +38,15 @@ body {
     right: 0;
     padding: 20px;
     width: 50%;
+    background-color: black;
+    border-radius: 10px;
+    opacity: .4;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.descr-slider:hover{
+    opacity: .8;
 }
 
 .slider-big img{
@@ -79,6 +88,25 @@ body {
     cursor: pointer;
     opacity: .7;
 
+}
+
+.name{
+    font-size: 45px;
+    text-align: right;
+    color: white;
+}
+
+.people{
+    font-size: 25px;
+    text-align: right;
+    color: white;
+}
+
+.descr{
+    font-size: 20px;
+    text-align: right;
+    color: white;
+    padding-top: 10px;
 }
 
 .buttons #prev{
