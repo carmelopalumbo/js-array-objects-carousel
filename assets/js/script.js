@@ -1,4 +1,4 @@
-js
+// js
 
 // array di oggetti
 const cities = [
@@ -37,3 +37,48 @@ const cities = [
         image: 'berlino.jpg'
     }
 ]
+
+// variabili
+
+const sliderBig = document.querySelector('.slider-big');
+const sliderThumb = document.querySelector('.thumbnails');
+const descrSlider = document.querySelector('.descr-slider');
+const btnNext = document.querySelector('#next');
+const btnPrev = document.querySelector('#prev');
+
+//creo le thumbnails
+getThumbnails();
+
+//creo la prima immagine
+createContentTop(cities[0]);
+
+
+
+function createContentTop(cities){
+    let content = '';
+    
+     content = `
+        <div class="citta">
+                <img src="assets/img/${cities.image}" alt="${cities.name}">
+                <div class="descr-slider">
+                    <p class="cityname">${cities.name}</p>
+                    <p class="people">${cities.people}</p>
+                    <p class="descr">${cities.descr}</p>
+                </div>
+        </div>
+   `;
+
+   sliderBig.innerHTML = content;
+}
+
+
+function getThumbnails(){
+    let content = '';
+    
+    cities.forEach(city => {
+        content += `<img src="assets/img/${city.image}" alt="${city.name}">`
+    })
+
+    console.log(content);
+    sliderThumb.innerHTML = content;
+}
