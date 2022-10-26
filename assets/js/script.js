@@ -39,7 +39,6 @@ const cities = [
 ]
 
 // variabili
-
 const sliderBig = document.querySelector('.slider-big');
 const sliderThumb = document.querySelector('.thumbnails');
 const btnNext = document.querySelector('#next');
@@ -64,8 +63,8 @@ const imgThumb = document.getElementsByClassName('thumb_img');
 //creo un array contenente le descrizioni
 const descrSlider = document.getElementsByClassName('descr-slider');
 
-//creo situazione default
-defaultPage();
+//creo output default
+getOutput();
 
 //button avanti con check loop
 btnNext.addEventListener('click', function(){
@@ -77,19 +76,13 @@ btnPrev.addEventListener('click', function(){
     nextCity(false);
 });
 
-// console.log(imgBig)
-// console.log(imgThumb);
-
-
 // timing function
-
 let timingCarousel = setInterval(function(){
     nextCity(checkLoop);
 }, 3000);
 
 
 //bottoni inverti e stop
-
 btnStop.addEventListener('click', function(){
     clearInterval(timingCarousel);
 })
@@ -106,7 +99,6 @@ btnSwap.addEventListener('click', function(){
 
 
 // funzioni
-
 function getContentTop(){
     let content = '';
     
@@ -136,19 +128,18 @@ function getThumbnails(){
     sliderThumb.innerHTML = content;
 }
 
-function defaultPage(){
+function getOutput(){
     imgBig[counter].classList.remove('d-none');
     imgThumb[counter].classList.add('thumb_active');
     descrSlider[counter].classList.remove('d-none');
 }
 
 function nextCity(checkCounter){
-
     imgBig[counter].classList.add('d-none');
     imgThumb[counter].classList.remove('thumb_active');
     imgThumb[counter].classList.add('thumb_none');
     descrSlider[counter].classList.add('d-none');
-    console.log(imgBig.length);
+    //console.log(imgBig.length);
     if(checkCounter){
         if(counter === imgBig.length - 1) counter = 0;
         else counter++;
@@ -158,6 +149,5 @@ function nextCity(checkCounter){
         else counter--;
     }
 
-    defaultPage();
-
+    getOutput();
 }
