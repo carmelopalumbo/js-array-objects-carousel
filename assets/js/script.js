@@ -77,6 +77,9 @@ btnPrev.addEventListener('click', function(){
 // console.log(imgBig);
 // console.log(imgThumb);
 
+
+// funzioni
+
 function getContentTop(){
     let content = '';
     
@@ -131,3 +134,12 @@ function nextCity(checkCounter){
     defaultPage();
 
 }
+
+
+// timing function
+
+const timingCarousel = setInterval(function(){
+    nextCity(true);
+}, 2000);
+
+

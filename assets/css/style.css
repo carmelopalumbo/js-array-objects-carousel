@@ -73,11 +73,13 @@ body {
 .thumb_none{
     filter: grayscale(1);
     border: none;
+    transition: all .5s;
 }
 
 .thumb_active{
     filter: grayscale(0);
     border: 5px solid white;
+    transition: all .5s;
 }
 
 #prev,
@@ -120,3 +122,4 @@ body {
     top: 50%;
     right: 1%;
 }
+
