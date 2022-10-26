@@ -64,6 +64,15 @@ const descrSlider = document.getElementsByClassName('descr-slider');
 //creo situazione default
 defaultPage();
 
+//button avanti con check loop
+btnNext.addEventListener('click', function(){
+    nextCity(true);
+});
+
+//button indietro con check loop
+btnPrev.addEventListener('click', function(){
+    nextCity(false);
+});
 
 // console.log(imgBig);
 // console.log(imgThumb);
@@ -101,4 +110,24 @@ function defaultPage(){
     imgBig[counter].classList.remove('d-none');
     imgThumb[counter].classList.add('thumb_active');
     descrSlider[counter].classList.remove('d-none');
+}
+
+function nextCity(checkCounter){
+
+    imgBig[counter].classList.add('d-none');
+    imgThumb[counter].classList.remove('thumb_active');
+    imgThumb[counter].classList.add('thumb_none');
+    descrSlider[counter].classList.add('d-none');
+    console.log(imgBig.length);
+    if(checkCounter){
+        if(counter === imgBig.length - 1) counter = 0;
+        else counter++;
+    }
+    else{
+        if(counter === 0) counter = imgBig.length - 1;
+        else counter--;
+    }
+
+    defaultPage();
+
 }
