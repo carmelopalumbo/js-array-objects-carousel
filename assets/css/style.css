@@ -123,3 +123,15 @@ body {
     right: 1%;
 }
 
+.footer-button{
+    margin-top: 30px;
+}
+
+.footer-button button{
+    margin-right: 20px;
+    padding: 8px 15px;
+    border: 1px solid black;
+    background-color: aqua;
+    border-radius: 5px;
+    cursor: pointer;
+}

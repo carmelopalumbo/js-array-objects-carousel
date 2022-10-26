@@ -44,6 +44,9 @@ const sliderBig = document.querySelector('.slider-big');
 const sliderThumb = document.querySelector('.thumbnails');
 const btnNext = document.querySelector('#next');
 const btnPrev = document.querySelector('#prev');
+let checkLoop = true;
+const btnSwap = document.querySelector('.swap');
+const btnStop = document.querySelector('.stop');
 let counter = 0;
 
 //creo le thumbnails
@@ -74,8 +77,31 @@ btnPrev.addEventListener('click', function(){
     nextCity(false);
 });
 
-// console.log(imgBig);
+// console.log(imgBig)
 // console.log(imgThumb);
+
+
+// timing function
+
+let timingCarousel = setInterval(function(){
+    nextCity(checkLoop);
+}, 3000);
+
+
+//bottoni inverti e stop
+
+btnStop.addEventListener('click', function(){
+    clearInterval(timingCarousel);
+})
+
+btnSwap.addEventListener('click', function(){
+    checkLoop = false;
+    clearInterval(timingCarousel);
+    timingCarousel = setInterval(function(){
+        nextCity(checkLoop);
+    }, 3000);
+})
+
 
 
 // funzioni
@@ -134,12 +160,3 @@ function nextCity(checkCounter){
     defaultPage();
 
 }
-
-
-// timing function
-
-const timingCarousel = setInterval(function(){
-    nextCity(true);
-}, 2000);
-
-
