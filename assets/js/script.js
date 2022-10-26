@@ -95,7 +95,8 @@ btnStop.addEventListener('click', function(){
 })
 
 btnSwap.addEventListener('click', function(){
-    checkLoop = false;
+    if(checkLoop) checkLoop = false;
+    else checkLoop = true;
     clearInterval(timingCarousel);
     timingCarousel = setInterval(function(){
         nextCity(checkLoop);
