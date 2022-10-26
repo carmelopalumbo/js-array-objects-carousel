@@ -1,5 +1,6 @@
-// js
+js
 
+// array di oggetti
 const cities = [
     {
         name: 'New York',
