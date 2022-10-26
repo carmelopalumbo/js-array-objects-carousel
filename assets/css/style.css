@@ -94,15 +94,26 @@ body {
 }
 
 .name{
-    font-size: 45px;
+    font-size: 55px;
     text-align: right;
     color: white;
+    font-weight: bold;
+}
+
+.descr-slider:hover .descr{
+    opacity: 1;
+}
+
+.descr{
+    opacity: 0;
+    transition: all .5s;
 }
 
 .people{
     font-size: 15px;
     text-align: right;
     color: white;
+    font-style: italic;
 }
 
 .descr{
