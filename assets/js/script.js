@@ -42,33 +42,46 @@ const cities = [
 
 const sliderBig = document.querySelector('.slider-big');
 const sliderThumb = document.querySelector('.thumbnails');
-const descrSlider = document.querySelector('.descr-slider');
 const btnNext = document.querySelector('#next');
 const btnPrev = document.querySelector('#prev');
+let counter = 0;
 
 //creo le thumbnails
 getThumbnails();
 
-//creo la prima immagine
-createContentTop(cities[0]);
+//creo le immagini
+getContentTop();
+
+//creo un array contenente le immagini grandi
+const imgBig = document.getElementsByClassName('big_img');
+
+//creo un array contenente le immagini thumb
+const imgThumb = document.getElementsByClassName('thumb_img');
+
+//creo un array contenente le descrizioni
+const descrSlider = document.getElementsByClassName('descr-slider');
+
+//creo situazione default
+defaultPage();
 
 
+// console.log(imgBig);
+// console.log(imgThumb);
 
-function createContentTop(cities){
+function getContentTop(){
     let content = '';
     
-     content = `
-        <div class="citta">
-                <img src="assets/img/${cities.image}" alt="${cities.name}">
-                <div class="descr-slider">
-                    <p class="cityname">${cities.name}</p>
-                    <p class="people">${cities.people}</p>
-                    <p class="descr">${cities.descr}</p>
-                </div>
-        </div>
-   `;
+    cities.forEach(city => {
+        content += `<img class="big_img d-none" src="assets/img/${city.image}" alt="${city.name}">
+        <div class="descr-slider d-none">
+        <p class="name">${city.name}</p>
+        <p class="people">${city.people}</p>
+        <p class="descr">${city.descr}</p>
+        </div>`
+    })
 
-   sliderBig.innerHTML = content;
+    //console.log(content);
+    sliderBig.innerHTML = content;
 }
 
 
@@ -76,9 +89,16 @@ function getThumbnails(){
     let content = '';
     
     cities.forEach(city => {
-        content += `<img src="assets/img/${city.image}" alt="${city.name}">`
+        content += `<img class="thumb_img thumb_none" src="assets/img/${city.image}" alt="${city.name}">
+        `;
     })
 
-    console.log(content);
+    //console.log(content);
     sliderThumb.innerHTML = content;
+}
+
+function defaultPage(){
+    imgBig[counter].classList.remove('d-none');
+    imgThumb[counter].classList.add('thumb_active');
+    descrSlider[counter].classList.remove('d-none');
 }
