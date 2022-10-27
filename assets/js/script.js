@@ -60,6 +60,11 @@ const imgBig = document.getElementsByClassName('big_img');
 //creo un array contenente le immagini thumb
 const imgThumb = document.getElementsByClassName('thumb_img');
 
+//aggiungo id alle thumbails
+addThumbId();
+
+console.log(imgThumb);
+
 //creo un array contenente le descrizioni
 const descrSlider = document.getElementsByClassName('descr-slider');
 
@@ -150,4 +155,10 @@ function nextCity(checkCounter){
     }
 
     getOutput();
+}
+
+function addThumbId(){
+    for(let i = 0; i < imgThumb.length; i++){
+        imgThumb[i].idThumb = i;
+    }
 }
