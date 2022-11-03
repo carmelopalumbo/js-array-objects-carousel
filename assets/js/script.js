@@ -63,8 +63,6 @@ const imgThumb = document.getElementsByClassName('thumb_img');
 //aggiungo id alle thumbails
 addThumbId();
 
-console.log(imgThumb);
-
 //creo un array contenente le descrizioni
 const descrSlider = document.getElementsByClassName('descr-slider');
 
@@ -159,6 +157,6 @@ function nextCity(checkCounter){
 
 function addThumbId(){
     for(let i = 0; i < imgThumb.length; i++){
-        imgThumb[i].idThumb = i;
+         imgThumb[i].idThumb = i;
     }
 }
