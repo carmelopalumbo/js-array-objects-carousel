@@ -4,25 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
     <!-- CDN FONT AWESOME -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous'/>
     
+    <!-- SCRIPT VUE.JS -->
+    <script src=“https://unpkg.com/vue@3”></script>
+
     <!-- CSS LINK -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Objects Carousel</title>
 </head>
+
 <body>
 
+  <div id="app">
     <div class="container">
           <div class="slider-big">
-            <!-- from js -->
+            <img class="big_img" src="assets/img/berlino.jpg" alt="">
+          <div class="descr-slider">
+            <p class="name">NOME</p>
+            <p class="people">PEOPLE</p>
+            <p class="descr">DESCR</p>
+          </div>
           </div>
 
           <div class="slider-thumb">
 
             <div class="thumbnails">
-             <!-- from js -->
+              <img class="thumb_img thumb_none" src="assets/img/berlino.jpg" alt="">
+              <img class="thumb_img thumb_none" src="assets/img/berlino.jpg" alt="">
+              <img class="thumb_img thumb_none" src="assets/img/berlino.jpg" alt="">
+              <img class="thumb_img thumb_none" src="assets/img/berlino.jpg" alt="">
+              <img class="thumb_img thumb_none" src="assets/img/berlino.jpg" alt="">
             </div>
 
             <div class="buttons">
@@ -30,12 +45,8 @@
                 <button id="next"><i class="fa-solid fa-forward"></i></button>
             </div>
          </div>
-
-         <div class="footer-button">
-            <button class="swap">INVERTI ORDINE DI SCORRIMENTO</button>
-            <button class="stop">INTERROMPI LO SCORRIMENTO</button>
-         </div>
     </div>
+  </div>
 
     <!-- SCRIPT JS -->
     <script src="assets/js/script.js"></script>
